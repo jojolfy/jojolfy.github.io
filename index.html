@@ -513,6 +513,147 @@ git checkout dev
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://jojolfy.github.io/2017/06/24/vue中自定义指令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vegas#">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="西瓜瓤瓤红">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/24/vue中自定义指令/" itemprop="url">vue中自定义指令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-24T21:06:28+08:00">
+                2017-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="全局指令"><a href="#全局指令" class="headerlink" title="全局指令"></a>全局指令</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Vue.directive(<span class="string">'test'</span>, &#123;</div><div class="line">  <span class="attr">inserted</span>: <span class="function"><span class="keyword">function</span>(<span class="params">el, binding</span>) </span>&#123;</div><div class="line">    <span class="comment">//doSomething</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h4 id="局部指令"><a href="#局部指令" class="headerlink" title="局部指令"></a>局部指令</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">directives: &#123;</div><div class="line">  <span class="attr">test</span>: &#123;</div><div class="line">    <span class="attr">inserted</span>: <span class="function"><span class="keyword">function</span>(<span class="params">el, binding</span>) </span>&#123;</div><div class="line">      <span class="comment">//doSomething</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>指令定义函数提供了几个钩子函数（可选）：</p>
+<ul>
+<li><code>bind</code>: 只调用一次，指令第一次绑定到元素时调用，用这个钩子函数可以定义一个在绑定时执行一次的初始化动作。</li>
+<li><code>inserted</code>: 被绑定元素插入父节点时调用（父节点存在即可调用，不必存在于 document 中）。</li>
+<li><code>update</code>: 被绑定元素所在的模板更新时调用，而不论绑定值是否变化。通过比较更新前后的绑定值，可以忽略不必要的模板更新（详细的钩子函数参数见下）。</li>
+<li><code>componentUpdated</code>: 被绑定元素所在模板完成一次更新周期时调用。</li>
+<li><code>unbind</code>: 只调用一次， 指令与元素解绑时调用。</li>
+</ul>
+<p>钩子函数的参数有：</p>
+<ul>
+<li><code>el</code>: 指令所绑定的元素，可以用来直接操作 DOM 。</li>
+<li><code>binding</code>: 一个对象，包含以下属性：<ul>
+<li><strong>name</strong>: 指令名，不包括 <code>v-</code> 前缀。</li>
+<li><strong>value</strong>: 指令的绑定值， 例如： <code>v-my-directive=&quot;1 + 1&quot;</code>, value 的值是 <code>2</code>。</li>
+<li><strong>oldValue</strong>: 指令绑定的前一个值，仅在 <code>update</code> 和 <code>componentUpdated</code> 钩子中可用。无论值是否改变都可用。</li>
+<li><strong>expression</strong>: 绑定值的字符串形式。 例如 <code>v-my-directive=&quot;1 + 1&quot;</code> ， expression 的值是 <code>&quot;1 + 1&quot;</code>。</li>
+<li><strong>arg</strong>: 传给指令的参数。例如 <code>v-my-directive:foo</code>， arg 的值是 <code>&quot;foo&quot;</code>。</li>
+<li><strong>modifiers</strong>: 一个包含修饰符的对象。 例如： <code>v-my-directive.foo.bar</code>, 修饰符对象 modifiers 的值是 <code>{ foo: true, bar: true }</code>。</li>
+</ul>
+</li>
+<li><code>vnode</code>: Vue 编译生成的虚拟节点。</li>
+<li><code>oldVnode</code>: 上一个虚拟节点，仅在 <code>update</code> 和 <code>componentUpdated</code> 钩子中可用。</li>
+</ul>
+<h3 id="自定义指令传参"><a href="#自定义指令传参" class="headerlink" title="自定义指令传参"></a>自定义指令传参</h3><ol>
+<li>指令中直接传data中的值：<code>v-test=&quot;data&quot;</code></li>
+<li>指令中传一个函数：<code>v-test=&quot;{fn:fn}&quot;</code></li>
+</ol>
+<p>指令原则上是针对DOM元素的 ，不存在this<br>应该尽可能的通过指令表达式把指令需要的内容传入<br>所以一般不推荐在指令内调用组件实例上的方法或获取组件实例的属性，当然一定要用的话,第三个参数vode的vnode.context就是Vue实例</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -559,7 +700,7 @@ git checkout dev
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

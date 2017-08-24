@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="搭建博客教程    在github里创建project，名字和自己的名字一样（jojolfy.github.io）    初始化本地文件夹：hexo init 文件目录，然后进去到 cd 文件目录    npm install hexo-deployer-git –save    在博客目录里生成静态文件：hexo g    更改_config.yml文件，里边的url改为自己的地址    启动服">
+<meta name="description" content="全局指令12345Vue.directive(&apos;test&apos;, &amp;#123;  inserted: function(el, binding) &amp;#123;    //doSomething  &amp;#125;&amp;#125;) 局部指令1234567directives: &amp;#123;  test: &amp;#123;    inserted: function(el, binding) &amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建博客教程">
-<meta property="og:url" content="https://jojolfy.github.io/2017/07/12/请输入访问密码/index.html">
+<meta property="og:title" content="vue中自定义指令">
+<meta property="og:url" content="https://jojolfy.github.io/2017/06/24/vue中自定义指令/index.html">
 <meta property="og:site_name" content="西瓜瓤瓤红">
-<meta property="og:description" content="搭建博客教程    在github里创建project，名字和自己的名字一样（jojolfy.github.io）    初始化本地文件夹：hexo init 文件目录，然后进去到 cd 文件目录    npm install hexo-deployer-git –save    在博客目录里生成静态文件：hexo g    更改_config.yml文件，里边的url改为自己的地址    启动服">
+<meta property="og:description" content="全局指令12345Vue.directive(&apos;test&apos;, &amp;#123;  inserted: function(el, binding) &amp;#123;    //doSomething  &amp;#125;&amp;#125;) 局部指令1234567directives: &amp;#123;  test: &amp;#123;    inserted: function(el, binding) &amp;#123;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-20T03:28:00.649Z">
+<meta property="og:updated_time" content="2017-08-24T14:27:36.259Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="搭建博客教程">
-<meta name="twitter:description" content="搭建博客教程    在github里创建project，名字和自己的名字一样（jojolfy.github.io）    初始化本地文件夹：hexo init 文件目录，然后进去到 cd 文件目录    npm install hexo-deployer-git –save    在博客目录里生成静态文件：hexo g    更改_config.yml文件，里边的url改为自己的地址    启动服">
+<meta name="twitter:title" content="vue中自定义指令">
+<meta name="twitter:description" content="全局指令12345Vue.directive(&apos;test&apos;, &amp;#123;  inserted: function(el, binding) &amp;#123;    //doSomething  &amp;#125;&amp;#125;) 局部指令1234567directives: &amp;#123;  test: &amp;#123;    inserted: function(el, binding) &amp;#123;">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://jojolfy.github.io/2017/07/12/请输入访问密码/"/>
+  <link rel="canonical" href="https://jojolfy.github.io/2017/06/24/vue中自定义指令/"/>
 
 
 
 
 
-  <title>搭建博客教程 | 西瓜瓤瓤红</title>
+  <title>vue中自定义指令 | 西瓜瓤瓤红</title>
   
 
 
@@ -286,7 +286,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://jojolfy.github.io/2017/07/12/请输入访问密码/">
+    <link itemprop="mainEntityOfPage" href="https://jojolfy.github.io/2017/06/24/vue中自定义指令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vegas#">
@@ -303,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">搭建博客教程</h1>
+          <h1 class="post-title" itemprop="name headline">vue中自定义指令</h1>
         
 
         <div class="post-meta">
@@ -315,8 +315,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-12T22:34:41+08:00">
-                2017-07-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-24T21:06:28+08:00">
+                2017-06-24
               </time>
             
 
@@ -350,7 +350,36 @@
       
 
       
-        <h2 id="搭建博客教程"><a href="#搭建博客教程" class="headerlink" title="搭建博客教程"></a>搭建博客教程</h2><ol><br>    <li>在github里创建project，名字和自己的名字一样（jojolfy.github.io）</li><br>    <li>初始化本地文件夹：hexo init 文件目录，然后进去到 cd 文件目录</li><br>    <li>npm install hexo-deployer-git –save</li><br>    <li>在博客目录里生成静态文件：hexo g</li><br>    <li>更改_config.yml文件，里边的url改为自己的地址</li><br>    <li>启动服务测试：hexo s</li><br>    <li>更改_config.yml的type为git，并在后边添加repo属性，值为仓库地址</li><br>    <li>再次执行 hexo g 命令</li><br>    <li>最后上传 hexo d</li><br></ol>
+        <h4 id="全局指令"><a href="#全局指令" class="headerlink" title="全局指令"></a>全局指令</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Vue.directive(<span class="string">'test'</span>, &#123;</div><div class="line">  <span class="attr">inserted</span>: <span class="function"><span class="keyword">function</span>(<span class="params">el, binding</span>) </span>&#123;</div><div class="line">    <span class="comment">//doSomething</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h4 id="局部指令"><a href="#局部指令" class="headerlink" title="局部指令"></a>局部指令</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">directives: &#123;</div><div class="line">  <span class="attr">test</span>: &#123;</div><div class="line">    <span class="attr">inserted</span>: <span class="function"><span class="keyword">function</span>(<span class="params">el, binding</span>) </span>&#123;</div><div class="line">      <span class="comment">//doSomething</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>指令定义函数提供了几个钩子函数（可选）：</p>
+<ul>
+<li><code>bind</code>: 只调用一次，指令第一次绑定到元素时调用，用这个钩子函数可以定义一个在绑定时执行一次的初始化动作。</li>
+<li><code>inserted</code>: 被绑定元素插入父节点时调用（父节点存在即可调用，不必存在于 document 中）。</li>
+<li><code>update</code>: 被绑定元素所在的模板更新时调用，而不论绑定值是否变化。通过比较更新前后的绑定值，可以忽略不必要的模板更新（详细的钩子函数参数见下）。</li>
+<li><code>componentUpdated</code>: 被绑定元素所在模板完成一次更新周期时调用。</li>
+<li><code>unbind</code>: 只调用一次， 指令与元素解绑时调用。</li>
+</ul>
+<p>钩子函数的参数有：</p>
+<ul>
+<li><code>el</code>: 指令所绑定的元素，可以用来直接操作 DOM 。</li>
+<li><code>binding</code>: 一个对象，包含以下属性：<ul>
+<li><strong>name</strong>: 指令名，不包括 <code>v-</code> 前缀。</li>
+<li><strong>value</strong>: 指令的绑定值， 例如： <code>v-my-directive=&quot;1 + 1&quot;</code>, value 的值是 <code>2</code>。</li>
+<li><strong>oldValue</strong>: 指令绑定的前一个值，仅在 <code>update</code> 和 <code>componentUpdated</code> 钩子中可用。无论值是否改变都可用。</li>
+<li><strong>expression</strong>: 绑定值的字符串形式。 例如 <code>v-my-directive=&quot;1 + 1&quot;</code> ， expression 的值是 <code>&quot;1 + 1&quot;</code>。</li>
+<li><strong>arg</strong>: 传给指令的参数。例如 <code>v-my-directive:foo</code>， arg 的值是 <code>&quot;foo&quot;</code>。</li>
+<li><strong>modifiers</strong>: 一个包含修饰符的对象。 例如： <code>v-my-directive.foo.bar</code>, 修饰符对象 modifiers 的值是 <code>{ foo: true, bar: true }</code>。</li>
+</ul>
+</li>
+<li><code>vnode</code>: Vue 编译生成的虚拟节点。</li>
+<li><code>oldVnode</code>: 上一个虚拟节点，仅在 <code>update</code> 和 <code>componentUpdated</code> 钩子中可用。</li>
+</ul>
+<h3 id="自定义指令传参"><a href="#自定义指令传参" class="headerlink" title="自定义指令传参"></a>自定义指令传参</h3><ol>
+<li>指令中直接传data中的值：<code>v-test=&quot;data&quot;</code></li>
+<li>指令中传一个函数：<code>v-test=&quot;{fn:fn}&quot;</code></li>
+</ol>
+<p>指令原则上是针对DOM元素的 ，不存在this<br>应该尽可能的通过指令表达式把指令需要的内容传入<br>所以一般不推荐在指令内调用组件实例上的方法或获取组件实例的属性，当然一定要用的话,第三个参数vode的vnode.context就是Vue实例</p>
 
       
     </div>
@@ -387,18 +416,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/24/vue中自定义指令/" rel="next" title="vue中自定义指令">
-                <i class="fa fa-chevron-left"></i> vue中自定义指令
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/20/提交本地项目到github/" rel="prev" title="'提交本地项目到github'">
-                '提交本地项目到github' <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/12/请输入访问密码/" rel="prev" title="搭建博客教程">
+                搭建博客教程 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -513,7 +538,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建博客教程"><span class="nav-number">1.</span> <span class="nav-text">搭建博客教程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#全局指令"><span class="nav-number">1.</span> <span class="nav-text">全局指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#局部指令"><span class="nav-number">2.</span> <span class="nav-text">局部指令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义指令传参"><span class="nav-number"></span> <span class="nav-text">自定义指令传参</span></a></div>
             
 
           </div>
